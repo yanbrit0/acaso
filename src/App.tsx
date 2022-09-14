@@ -27,6 +27,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import StorybookUI from '../storybook/index.js';
+import config from './constants';
+
 const styles = StyleSheet.create({
   sectionContainer: {
     marginTop: 32,
@@ -116,4 +119,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default config.LOAD_STORYBOOK ? StorybookUI : App;
