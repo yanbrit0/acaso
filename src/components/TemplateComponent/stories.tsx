@@ -5,4 +5,6 @@ import Main from '.';
 
 const props = {};
 
-storiesOf('TestComponent', module).add('Default', () => <Main {...props} />);
+storiesOf('TemplateComponent', module).add('Default', () => (
+  <Main {...props} />
+));
