@@ -12,4 +12,4 @@ Boilerplate to be used in our JR mobile developoler selection process
 - jest
 
 ## Note
-Before everything, run `yarn husky install` in the root folder to enable Husky
+Before everything, run `yarn && yarn husky install` in the root folder to enable Husky
