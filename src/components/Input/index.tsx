@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Ref, useState } from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
@@ -6,9 +6,11 @@ import * as S from './styles';
 
 type Props = TextInputProps & {
   isPassword?: boolean;
+  innerRef?: Ref<TextInput>;
+  error?: string;
 };
 
-export const Input: React.FC<Props> = ({ isPassword, ...rest }) => {
+export const Input: React.FC<Props> = ({ isPassword, error, ...rest }) => {
   const theme = useTheme();
 
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
@@ -19,7 +21,7 @@ export const Input: React.FC<Props> = ({ isPassword, ...rest }) => {
 
   return (
     <S.Container>
-      <S.InputBox>
+      <S.InputBox error={!!error}>
         <TextInput
           style={{
             flex: 1,

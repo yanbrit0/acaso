@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import { Alert } from 'react-native';
-import Logo from '../../assets/svg/logo.svg';
 
 import { useAuth } from '../../hooks/useAuth';
 
 import { Typography } from '../../components/Typography';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
+import { Logo } from '../../components/Logo';
 
 import * as S from './styles';
 
 export const Login: React.FC = () => {
+  const { navigate } = useNavigation();
+
   const { signIn } = useAuth();
 
   const [email, setEmail] = useState('');
@@ -37,9 +40,13 @@ export const Login: React.FC = () => {
     }
   };
 
+  const handleGoToRegister = () => {
+    navigate('register');
+  };
+
   return (
     <S.Container>
-      <Logo width={100} height={18.14} />
+      <Logo />
 
       <S.TitleContainer>
         <Typography as="H1">Login</Typography>
@@ -57,6 +64,7 @@ export const Login: React.FC = () => {
           textContentType="emailAddress"
           autoCapitalize="none"
         />
+
         <S.LabelContainer>
           <Typography as="p">Senha</Typography>
         </S.LabelContainer>
@@ -75,7 +83,11 @@ export const Login: React.FC = () => {
             <Typography as="p2">Não possui conta em aca.so?</Typography>
           </S.LabelContainer>
 
-          <Button title="Criar uma conta" type="dark" />
+          <Button
+            onPress={handleGoToRegister}
+            title="Criar uma conta"
+            type="dark"
+          />
         </S.CreateAccountContainer>
       </S.Form>
     </S.Container>

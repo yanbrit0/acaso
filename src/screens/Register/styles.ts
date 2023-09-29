@@ -10,7 +10,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const TitleContainer = styled.View`
-  flex: 0.3;
+  flex: 0.4;
   justify-content: center;
   align-items: center;
 `;
@@ -23,10 +23,4 @@ export const Form = styled.View`
 export const LabelContainer = styled.View`
   margin-left: 16px;
   margin-bottom: 8px;
-`;
-
-export const CreateAccountContainer = styled.View`
-  align-items: center;
-
-  margin-top: 24px;
 `;
