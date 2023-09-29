@@ -13,6 +13,7 @@ import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 
 import { Routes } from './Routes';
+import { AuthProvider } from './hooks/useAuth';
 import theme from './styles/themes';
 
 import config from './constants';
@@ -21,8 +22,10 @@ import StorybookUI from '../storybook/index.js';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar barStyle="light-content" />
-      <Routes />
+      <AuthProvider>
+        <StatusBar barStyle="light-content" />
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 };

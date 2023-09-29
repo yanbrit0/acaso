@@ -29,7 +29,7 @@ export const Input: React.FC<Props> = ({ isPassword, ...rest }) => {
             paddingRight: 10,
           }}
           placeholderTextColor={theme.colors.p2 + 50}
-          secureTextEntry={!passwordIsVisible}
+          secureTextEntry={isPassword && !passwordIsVisible}
           {...rest}
         />
 

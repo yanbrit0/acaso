@@ -4,9 +4,7 @@ type ContainerProps = {
   type: 'default' | 'dark';
 };
 
-export const Container = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.8,
-})<ContainerProps>`
+export const Container = styled.TouchableOpacity<ContainerProps>`
   width: 100%;
   height: 55px;
 
